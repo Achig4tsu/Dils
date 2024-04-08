@@ -24,7 +24,13 @@ class MyBot():
         
         @client.tree.command(name="setup", description="🤖 - Mise en place du Bot.")
         async def setup(interaction: discord.Interaction):
-            await InteractiveEmbed().send_embed(interaction)
+            embeds = [
+                discord.Embed(title="Page 1", description="Description of Page 1"),
+                discord.Embed(title="Page 2", description="Description of Page 2"),
+                discord.Embed(title="Settings", description="Configure your settings here")
+            ]
+            interactive_embed = InteractiveEmbed(embeds)
+            await interactive_embed.send_embed(interaction)
         
         @client.tree.command(name="ban", description="🤖 - Mise en place du Bot.")
         async def setup(interaction: discord.Interaction):
@@ -34,12 +40,17 @@ class MyBot():
         async def setup(interaction: discord.Interaction):
             await InteractiveEmbed().send_embed(interaction)
         
-            
+        
 
         @client.event
         async def on_ready():
             print ("----------------")
-            print ("|  D  I  L  S  |")
+            print ( " ____  _ _               ____  _                       _ \n"
+                    "|  _ \(_) |___          |  _ \(_)___  ___ ___  _ __ __| |\n"
+                    "| | | | | / __|  _____  | | | | / __|/ __/ _ \| '__/ _` |\n"
+                    "| |_| | | \__ \ |_____| | |_| | \__ \ (_| (_) | | | (_| |\n"
+                    "|____/|_|_|___/         |____/|_|___/\___\___/|_|  \__,_|\n"
+                                                                            )
             print ("----------------")
             print ()
             
